@@ -20,9 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 app.use(cookieParser());
 
+const {checkAuth} = require('./middleware/authMiddleware');
+app.use(checkAuth)
+
 
 // Database connection
-mongoose.connect("mongodb://127.0.0.1:27017/wanderscape")
+mongoose.connect(process.env.DB_URL)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error(err));
 
@@ -37,9 +40,9 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/auth', authRoutes);
 // app.use('/api/explore', exploreRoutes);
 // app.use('/api/message', messageRoutes);
-// app.use('/api/post', postRoutes);
+app.use('/api/post', postRoutes);
 // app.use('/api/profile', profileRoutes);
-// app.use('/api/user', userRoutes);
+app.use('/api/user', userRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;

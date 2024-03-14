@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
 
         // Create a new user
         const newUser = new User({
-            username: req.body.name,
+            username: req.body.username,
             email: req.body.email,
             password: hashedPassword
         });
@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
         // Create and send JWT token
         const token = jwt.sign({ userId: user._id }, config.jwtSecret);
 
-        res.cookie('token', token, { httpOnly: true }).json({ message: 'Login successful' });
+        res.cookie('token', token).json({ message: 'Login successful' });
     } 
     catch (error) {
         res.status(400).json({ message: error.message });

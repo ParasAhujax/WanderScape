@@ -10,9 +10,8 @@ const userSchema = new Schema({
   profilePicture: { type: String },
   followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date }
-});
+  
+},{timestamps:true});
 
 // Add pre-save hook to update 'updatedAt' field
 userSchema.pre('save', function(next) {
