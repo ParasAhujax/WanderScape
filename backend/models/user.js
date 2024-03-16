@@ -8,8 +8,8 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   bio: { type: String },
   profilePicture: { type: String },
-  followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-  following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  followers: [{ type: Schema.Types.ObjectId, ref: 'user' }],
+  following: [{ type: Schema.Types.ObjectId, ref: 'user' }],
   
 },{timestamps:true});
 
