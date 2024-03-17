@@ -5,6 +5,7 @@ const User = require('../models/user');
 
 exports.register = async (req, res) => {
     try {
+        console.log(req.body);
         const userExists = await User.findOne({email: req.body.email})
         if(userExists){
             return res.json({message: 'Already registered'})
@@ -28,15 +29,17 @@ exports.register = async (req, res) => {
         // Save the user to the database
         const savedUser = await newUser.save();
 
-        return res.status(201).json({ message: 'User registered successfully' });
+        return res.status(201).redirect('/auth/login');
     } 
     catch (error) {
-        return res.status(400).json({ error: error.message });
+        return res.status(500).json({message: error.message});
     }
 };
 
 exports.login = async (req, res) => {
     try {
+        console.log(req.body);
+
         // Find the user by email
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
@@ -52,7 +55,7 @@ exports.login = async (req, res) => {
         // Create and send JWT token
         const token = jwt.sign({ userId: user._id }, config.jwtSecret);
 
-        res.cookie('token', token).json({ message: 'Login successful' });
+        res.cookie('token', token).redirect('/');
     } 
     catch (error) {
         res.status(400).json({ message: error.message });
@@ -60,5 +63,7 @@ exports.login = async (req, res) => {
 };
 
 exports.logout = (req, res) => {
+    console.log(req.body);
+
     res.clearCookie('token').json({ message: 'Logout successful' });
 };

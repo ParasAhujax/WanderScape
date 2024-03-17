@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <h3>Hey <%=username %></h3>
+    <button id="userBtn1">John</button>
+    <button id="userBtn2">Dan</button>
+    <button id="userBtn3">Peter</button>
+    <br>
+    <button id="logoutBtn">Sign Out</button>
+</body>
+<script>
+
+    const userBtn1 = document.getElementById("userBtn1");
+    const userBtn2 = document.getElementById("userBtn2");
+    const userBtn3 = document.getElementById("userBtn3");
+
+    const logOutBtn = document.getElementById("logoutBtn");
+
+    userBtn1.addEventListener("click",()=>{      
+        window.location.href = `/65f2fb95e776446f703fbffd`
+    })
+    userBtn2.addEventListener("click",()=>{
+        window.location.href = `/65f58bbbf188618bc7652744`
+    })
+    userBtn3.addEventListener("click",()=>{
+        window.location.href = `/65f58bc4f188618bc7652748`
+    })
+
+    logOutBtn.addEventListener("click",()=>{
+        fetch('api/auth/logout',{
+            method: 'GET',  //not necessary to specify
+        })
+        .then(response => {
+            if(response.redirected) {
+                window.location.href = response.url
+            }
+        })
+    })
+</script>
+</html>
