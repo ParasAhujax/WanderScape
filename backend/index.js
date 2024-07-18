@@ -51,7 +51,7 @@ app.use('/',staticRoute)
 
 // Routes
 app.use('/api/auth', authRoutes);
-// app.use('/api/explore', exploreRoutes);
+app.use('/api/explore', exploreRoutes);
 app.use('/api/message', messageRoutes);
 app.use('/api/post', postRoutes);
 app.use('/api/profile', profileRoutes);
