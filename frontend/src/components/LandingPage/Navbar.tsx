@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { FloatingNav } from "@/component/floatNavbar";
+import { FloatingNav } from "../ui/floatNavbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-export function FloatingNavDemo() {
+export function LandingPageNavbar({className}:{className?:string}) {
     const navItems = [
         {
             name: "Home",
@@ -25,14 +25,7 @@ export function FloatingNavDemo() {
     return (
         <div className="relative  w-full">
             <FloatingNav navItems={navItems} />
-            <DummyContent />
         </div>
     );
 }
-const DummyContent = () => {
-    return (
-        <div className=" h-[100rem] w-full ">
 
-        </div>
-    );
-};
