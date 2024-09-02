@@ -22,19 +22,19 @@ app.use(cookieParser());
 app.use(express.static('public'))
 
 
-app.set('view engine','ejs')
-app.set('views','./views')
+app.set('view engine', 'ejs')
+app.set('views', './views')
 
 // Load environment variables from .env file
 dotenv.config();
 
-const {checkAuth} = require('./middleware/authMiddleware');
+const { checkAuth } = require('./middleware/authMiddleware');
 app.use(checkAuth)
 
 // Database connection
 mongoose.connect(process.env.DB_URL)
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error(err));
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error(err));
 
 const sendMessage = require('./sockets/chatSocket');
 sendMessage(io);
@@ -47,7 +47,7 @@ const profileRoutes = require('./routes/profileRoutes');
 const userRoutes = require('./routes/userRoutes');
 const staticRoute = require('./routes/staticRoutes');
 
-app.use('/',staticRoute)
+app.use('/', staticRoute)
 
 // Routes
 app.use('/api/auth', authRoutes);
