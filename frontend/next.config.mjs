@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+    reactStrictMode: false,
     images: {
-      domains: ['aceternity.com'],
+      dangerouslyAllowSVG: true,
+      domains: ["cdn.dribbble.com", "images.unsplash.com"],
+      contentSecurityPolicy: "script-src 'self'",
     },
   };
   
