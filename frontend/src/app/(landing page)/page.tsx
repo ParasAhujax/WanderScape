@@ -1,12 +1,15 @@
 import Introduction from "@/components/LandingPage/Introduction";
 import { LandingPageNavbar } from "@/components/LandingPage/Navbar";
-import { HeroParallax } from "@/components/ui/hero-parallax";
+import { AppleCardsCarouselDemo } from "@/components/LandingPage/Carousel";
+import { HeroScrollDemo } from "@/components/LandingPage/About";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen overflow-x-hidden flex-col items-center justify-between p-24">
-      <LandingPageNavbar className="absolute"/>
-      <Introduction/>
+      <LandingPageNavbar className="absolute" />
+      <Introduction />
+      <AppleCardsCarouselDemo />
+      <HeroScrollDemo />
     </div>
   );
 }
@@ -29,7 +32,7 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/rogue.png",
   },
- 
+
   {
     title: "Editorially",
     link: "https://editorially.org",
@@ -48,7 +51,7 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
   },
- 
+
   {
     title: "Algochurn",
     link: "https://algochurn.com",
@@ -79,7 +82,7 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
   },
- 
+
   {
     title: "Creme Digital",
     link: "https://cremedigital.com",
