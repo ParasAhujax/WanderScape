@@ -2,7 +2,7 @@
 import React from "react";
 import { FloatingNav } from "../ui/floatNavbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-export function LandingPageNavbar({className}:{className?:string}) {
+export function LandingPageNavbar({ className }: { className?: string }) {
     const navItems = [
         {
             name: "Home",
@@ -23,7 +23,7 @@ export function LandingPageNavbar({className}:{className?:string}) {
         },
     ];
     return (
-        <div className="relative  w-full">
+        <div className="absolute  w-full">
             <FloatingNav navItems={navItems} />
         </div>
     );
