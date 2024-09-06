@@ -1,9 +1,13 @@
 import { LandingPageNavbar } from "@/components/LandingPage/Navbar";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 
-export default function Introduction() {
+export default function Introduction({
+  className,
+}: {
+  className?: string;
+}) {
   return (
-    <div className="">
+    <div className={className}>
       <HeroParallax products={products}/>
     </div>
   );

@@ -3,17 +3,14 @@ import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
-export function AppleCardsCarouselDemo({className}:{className?:string}) {
+export function ExploreHorizontalCards({className}:{className?:string}) {
     const cards = data.map((card, index) => (
-        <Card key={card.src} card={card} index={index} />
+        <Card key={card.src} card={card} index={index} className="md:w-fit md:h-20 rounded-xl"/>    //use md for changing width,height of the card
     ));
 
     return (
-        <div className={`w-full h-full py-20 bg-slate-200 ${className}`}>
-            <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 text-black-200 dark:text-white-200 font-sans">
-                Get to know your iSad.
-            </h2>
-            <Carousel items={cards} />
+        <div className={`w-full ${className}`}>
+            <Carousel items={cards} className="h-[180px]"/>
         </div>
     );
 }
@@ -51,6 +48,12 @@ const DummyContent = () => {
 };
 
 const data = [
+    {
+        category: "Mountains",
+        title: "",
+        src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        content: <DummyContent />,
+    },
     {
         category: "Artificial Intelligence",
         title: "You can do more with AI.",
