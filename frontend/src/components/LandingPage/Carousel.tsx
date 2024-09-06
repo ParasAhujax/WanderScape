@@ -3,14 +3,14 @@ import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
-export function AppleCardsCarouselDemo({className}:{className?:string}) {
+export function AppleCardsCarouselDemo({ className }: { className?: string }) {
     const cards = data.map((card, index) => (
         <Card key={card.src} card={card} index={index} />
     ));
 
     return (
-        <div className={`w-full h-full py-20 bg-slate-200 ${className}`}>
-            <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 text-black-200 dark:text-white-200 font-sans">
+        <div className={`w-screen relative right-[36px] rounded-[100px] rounded-l-[100px] h-full py-20 bg-[#292927] ${className}`}>
+            <h2 className="max-w-7xl pl-4 mx-auto text-lg md:text-5xl font-bold text-white dark:text--200 font-sans">
                 Get to know your iSad.
             </h2>
             <Carousel items={cards} />
