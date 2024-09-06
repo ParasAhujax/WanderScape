@@ -12,10 +12,10 @@ export default function Home() {
       <div className="h-screen bg-white">
         <Intro />
       </div>
-      <div className="h-screen w-full rounded-b-[110px] bg-white z-50">
+      <div className=" w-full h-screen bg-[#292927] z-50">
         <Welcome />
       </div>
-      <AppleCardsCarouselDemo className="ml-[5vw] w-[95vw] shadow-lg" />
+        <AppleCardsCarouselDemo className="ml-[5vw] w-[95vw] shadow-lg rounded-b-[110px] pb-24" />
       <HeroScrollDemo />
     </div>
   );
