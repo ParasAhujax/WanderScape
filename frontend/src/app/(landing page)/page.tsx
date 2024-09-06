@@ -3,6 +3,7 @@ import { LandingPageNavbar } from "@/components/LandingPage/Navbar";
 import { AppleCardsCarouselDemo } from "@/components/LandingPage/Carousel";
 import { HeroScrollDemo } from "@/components/LandingPage/About";
 import Intro from "@/components/LandingPage/intro";
+import Welcome from "@/components/LandingPage/welcome";
 export default function Home() {
   return (
     <div className="flex min-h-screen overflow-x-hidden flex-col items-center justify-between">
@@ -11,7 +12,10 @@ export default function Home() {
       <div className="h-screen bg-white">
         <Intro />
       </div>
-      <AppleCardsCarouselDemo className="ml-[5vw] w-[95vw] rounded-l-3xl shadow-lg" />
+      <div className="h-screen w-full rounded-b-[110px] bg-white z-50">
+        <Welcome />
+      </div>
+      <AppleCardsCarouselDemo className="ml-[5vw] w-[95vw] shadow-lg" />
       <HeroScrollDemo />
     </div>
   );
