@@ -1,9 +1,11 @@
 "use client";
-import { ParallaxScroll } from "../ui/parallax-scroll";
+import { ExploreHorizontalCards } from "@/components/Explore/ExploreHorizontalCards";
+import { ParallaxScroll } from "../ui/explore-page-scroll-cards";
 
 export function ScrollCards({className}:{className?: string}) {
   return (
     <div>
+
         <ParallaxScroll className={className} images={images} />
     </div>
 );

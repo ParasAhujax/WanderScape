@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { ExploreHorizontalCards } from "../Explore/ExploreHorizontalCards";
+import Breadcrumb from "../Global/Breadcrumb";
 
 export const ParallaxScroll = ({
   images,
@@ -33,9 +35,14 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-screen items-start overflow-y- w-full", className)}
+      className={cn("h-screen items-start overflow-y-auto w-full", className)}
       ref={gridRef}
     >
+        <Breadcrumb title="Explore" className=" size-fit p-5 ml-8 rounded-b-[20px]" 
+        style={{
+          background: 'linear-gradient(0deg, rgba(247,175,224,1) 0%, rgba(248,255,255,1) 41%, rgba(159,251,246,1) 80%)',
+        }}/>
+        <ExploreHorizontalCards className=""/>
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start mx-auto gap-10 py-10 px-10"
         ref={gridRef}

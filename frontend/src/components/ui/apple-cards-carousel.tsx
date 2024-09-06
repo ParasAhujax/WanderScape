@@ -24,7 +24,7 @@ interface CarouselProps {
 
 type Card = {
   src: string;
-  title: string;
+  title?: string;
   category: string;
   content: React.ReactNode;
 };
@@ -93,7 +93,7 @@ export const Carousel = ({ items, initialScroll = 0 ,className}: CarouselProps) 
     >
       <div className="relative w-full">
         <div
-          className={`flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none] ${className}`}
+          className={`flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-10 scroll-smooth [scrollbar-width:none] ${className}`}
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -261,7 +261,7 @@ export const Card = ({
         </div>
         <BlurImage
           src={card.src}
-          alt={card.title}
+          alt={card.title || ''}
           fill
           className="object-cover absolute z-10 inset-0"
         />
