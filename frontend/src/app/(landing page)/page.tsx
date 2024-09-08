@@ -4,19 +4,21 @@ import { AppleCardsCarouselDemo } from "@/components/LandingPage/Carousel";
 import { HeroScrollDemo } from "@/components/LandingPage/About";
 import Intro from "@/components/LandingPage/intro";
 import Welcome from "@/components/LandingPage/welcome";
+import Contact from "@/components/LandingPage/Contact";
 export default function Home() {
   return (
     <div className="flex min-h-screen overflow-x-hidden flex-col items-center justify-between">
       <LandingPageNavbar className="absolute" />
       {/* <Introduction className="pb-20"/> */}
-      <div className="h-screen bg-white">
+      <div className="h-screen w-screen">
         <Intro />
       </div>
-      <div className=" w-full h-screen bg-[#292927] z-50">
+      <div className=" w-full h-screen bg-black z-50">
         <Welcome />
       </div>
-        <AppleCardsCarouselDemo className="ml-[5vw] w-[95vw] shadow-lg rounded-b-[110px] pb-24" />
+      <AppleCardsCarouselDemo className="ml-[5vw] w-[95vw] shadow-lg rounded-b-[110px] pb-24" />
       <HeroScrollDemo />
+      <Contact />
     </div>
   );
 }
