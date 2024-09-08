@@ -2,12 +2,6 @@
 import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import img1 from "../../../public/assets/pexels-cottonbro-5966342.jpg"
-import img2 from "../../../public/assets/pexels-plann-2999237-4549416.jpg"
-import img3 from "../../../public/assets/pexels-tima-miroshnichenko-7567550.jpg"
-import img4 from "../../../public/assets/pexels-n-voitkevich-7235902.jpg"
-import img5 from "../../../public/assets/pexels-vivek-sakhargade-837724-12151764.jpg"
-import img6 from "../../../public/assets/pexels-george-pak-7968285.jpg"
 
 export function AppleCardsCarouselDemo({ className }: { className?: string }) {
     const cards = data.map((card, index) => (
@@ -15,7 +9,7 @@ export function AppleCardsCarouselDemo({ className }: { className?: string }) {
     ));
 
     return (
-        <div className={`w-screen relative right-[36px]  h-full py-20 bg-black ${className}`}>
+        <div className={`w-screen relative right-[36px]  h-full py-20 bg-[#292927] ${className}`}>
             <h2 className="max-w-7xl pl-4 mx-auto text-lg md:text-5xl font-bold text-white dark:text--200 font-sans">
                 Get to know your iSad.
             </h2>
@@ -59,38 +53,39 @@ const DummyContent = () => {
 const data = [
     {
         category: "Artificial Intelligence",
-        title: "Smart Itinerary Builder",
-        src: img1,
+        title: "You can do more with AI.",
+        src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: <DummyContent />,
     },
     {
         category: "Productivity",
-        title: "Connect with other travellers",
-        src: img2,
+        title: "Enhance your productivity.",
+        src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: <DummyContent />,
     },
     {
         category: "Product",
-        title: "Price Tracker",
-        src: img3,
+        title: "Launching the new Apple Vision Pro.",
+        src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: <DummyContent />,
     },
 
     {
         category: "Product",
-        title: "Maps ",
-        src: img4,
+        title: "Maps for your iPhone 15 Pro Max.",
+        src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: <DummyContent />,
     },
     {
-        title: "Know Your Next Destination",
-        src: img5,
+        category: "iOS",
+        title: "Photography just got better.",
+        src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: <DummyContent />,
     },
     {
-
-        title: "On-Demand Travel Guide",
-        src: img6,
+        category: "Hiring",
+        title: "Hiring for a Staff Software Engineer",
+        src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: <DummyContent />,
     },
 ];
