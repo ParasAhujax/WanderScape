@@ -17,7 +17,7 @@ export function AppleCardsCarouselDemo({ className }: { className?: string }) {
     return (
         <div className={`w-screen relative right-[36px]  h-full py-20 bg-black ${className}`}>
             <h2 className="max-w-7xl pl-4 mx-auto text-lg md:text-5xl font-bold text-white dark:text--200 font-sans">
-                Get to know your iSad.
+                Outstanding Features.
             </h2>
             <Carousel items={cards} />
         </div>

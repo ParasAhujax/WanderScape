@@ -33,13 +33,18 @@ const Intro: React.FC = () => {
                 width={140}
                 className='relative z-50 top-10 left-14 bg-black rounded-full'
             />
+            <div className='w-[65vh] bg-[#E1D7C6] h-48 relative z-50 top-[50vh] left-[60vh] rounded-[40px]' >
+                <h1 className=' flex justify-center py-6 font-bold text-4xl'>WanderScape </h1>
+                <p className='flex justify-center py-4 text-2xl italic hover:non-italic cursor-default'>"Travel Far, Connect Closer."</p>
+            </div>
             <Image
                 src={images[currentImageIndex].src} // Extract the src property
                 alt="logo"
                 width={500}
                 height={400}
-                className="h-[95vh] w-screen rounded-b-[110px] relative top-[-10vh]"
+                className="h-[95vh] w-screen rounded-b-[110px] relative top-[-35vh]"
             />
+
         </>
     );
 };
